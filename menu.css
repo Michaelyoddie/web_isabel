@@ -1,0 +1,73 @@
+/* ===========================================
+    MENÚ A PANTALLA COMPLETA (.fullscreen-menu)
+=========================================== */
+.fullscreen-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/maderanegra.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 1100; /* Más alto que el header */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none; /* No interactuable cuando oculto */
+    visibility: hidden; /* Oculto completamente */
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+}
+
+/* Estado visible del menú (añadir/quitar esta clase con JS) */
+.fullscreen-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto; /* Interactuable */
+    visibility: visible; /* Visible */
+}
+
+/* Estilos para enlaces dentro del menú */
+.fullscreen-menu a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: #dcdada; /* Color base del enlace */
+    letter-spacing: 0.05em;
+    font-weight: normal;
+    transition: color 0.3s ease;
+}
+
+.fullscreen-menu a:hover,
+.fullscreen-menu a:focus { /* Añadir :focus para accesibilidad */
+    color: #0078D7; /* Color al hacer hover/focus */
+    text-decoration: underline; /* Subrayar en hover/focus */
+}
+
+/* Estilos para iconos de redes sociales en el menú */
+.fullscreen-menu .fab { /* Apuntar a los iconos específicamente */
+    font-size: 1.5rem;
+    color: #b5b3b3;
+    transition: color 0.3s ease;
+}
+.fullscreen-menu a:hover .fab, /* Cambiar color del icono al hacer hover en el enlace */
+.fullscreen-menu a:focus .fab {
+     color: #ffffff;
+}
+
+/* Clase para bloquear scroll cuando el menú/modal está abierto */
+body.no-scroll {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    touch-action: none; /* Previene scroll táctil */
+}
+
+/* Oculta contenido principal cuando menú está activo (alternativa a 'inert') */
+body.no-scroll > main,
+body.no-scroll > footer {
+   visibility: hidden;
+}
