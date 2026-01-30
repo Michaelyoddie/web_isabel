@@ -1,0 +1,418 @@
+/* ===========================================
+   FUENTES PERSONALIZADAS
+=========================================== */
+@font-face {
+    font-family: 'july_it';
+    src: url('fonts/july_it/July it.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aileron';
+    src: url('fonts/Aileron-Regular.ttf') format('truetype'),
+         url('fonts/Aileron-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'andale_monoregular';
+    src: url('fonts/andale-mono/ANDALEMO.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'Karla';
+    src: url('../fonts/Karla/Karla-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 700; /* rango de grosor disponible */
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'Karla';
+    src: url('../fonts/Karla/Karla-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 700;
+    font-style: italic;
+}
+
+/* ===========================================
+   CONFIGURACIÓN GENERAL DEL BODY Y HTML
+=========================================== */
+html, body {
+    overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+body {
+    font-family: 'Aileron', sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-top: 70px; /* Espacio para el header fijo */
+    /*background-image: url('images/negrovolcan.png');*/
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ===========================================
+   TIPOGRAFÍA PERSONALIZADA APLICADA
+=========================================== */
+.titulo-july {
+    font-family: 'july_it';
+    font-size: 5rem; /* Tamaño personalizado */
+}
+
+.viviana-letra {
+    font-family: 'Fira Code', monospace;
+    font-size: 1rem;
+}
+
+.letra_portafolio_web {
+    font-family: 'andale_monoregular', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.letra_titulos{
+    font-family: 'Architects Daughter', cursive;
+}
+
+.viviana-letra-parrafo {
+    font-family: 'Karla', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+}
+
+/* ===========================================
+   HEADER FIJO (MENÚ SUPERIOR)
+=========================================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+header .header-titulo h1 {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+header .header-titulo h2 {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+/* Header con transición suave */
+header {
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    will-change: transform, opacity;
+}
+
+/* Estado oculto */
+.header-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Zona superior invisible para mostrar el header */
+.header-hover-zone {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    z-index: 9999;
+}
+
+/* ===========================================
+   CONTENIDO PRINCIPAL (MAIN)
+=========================================== */
+main {
+    flex: 1;
+}
+
+/* ===========================================
+   CARRUSEL DE PROYECTOS
+=========================================== */
+.proyectos-carousel {
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    position: relative;
+    margin-top: 10px;
+}
+
+.proyectos-carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.proyectos-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    padding: 8px 12px;
+}
+
+.proyectos-carousel-btn.prev {
+    left: 15px;
+}
+
+.proyectos-carousel-btn.next {
+    right: 15px;
+}
+
+.proyecto-descripcion {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+.proyecto-descripcion h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.proyecto-descripcion p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* ===========================================
+   CARRUSEL GENÉRICO (SLIDER)
+=========================================== */
+.carousel {
+    width: 100%;
+    height: 85vh;
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.carousel-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+    min-width: 100%;
+}
+
+.carousel-slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    transition: opacity 1s ease-in-out;
+}
+
+/* ===========================================
+   OVERLAY EN IMÁGENES
+=========================================== */
+.proyecto-link {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    z-index: 2;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 3;
+}
+
+.proyecto-link:hover .overlay,
+.proyecto-link:focus .overlay {
+    opacity: 1;
+}
+
+/* ===========================================
+   BOTONES DE NAVEGACIÓN DEL CARRUSEL
+=========================================== */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    z-index: 5;
+    font-size: 1.2rem;
+    padding: 4px 6px;
+    transform-origin: center;
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ===========================================
+   CORRECCIÓN: MOSTRAR SOLO IMAGEN ACTIVA
+=========================================== */
+.carousel-proyectos-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-proyectos-slide.active {
+    opacity: 1 !important;
+    z-index: 1 !important;
+}
+
+/* ===========================================
+   EFECTO HOVER EN TARJETAS
+=========================================== */
+.tarjeta-hover {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.tarjeta-hover:hover {
+    transform: scale(1.05) translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ===========================================
+   Pie de Página (Footer)
+=========================================== */
+footer {
+    padding: 20px 0; /* Espaciado vertical */
+    text-align: center;
+    margin-top: auto; /* Empuja el footer hacia abajo si se usa flex */
+}
+
+/* Estilos de enlaces en el Footer */
+footer a {
+    transition: color 0.3s;
+}
+
+
+
+
+/* Header fijo + transición */
+.site-header {
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  will-change: transform, opacity;
+}
+
+/* Estado oculto al hacer scroll hacia abajo */
+.site-header.header-hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Franja superior para “rescatar” el header con el mouse (desktop) */
+.header-hover-zone {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  z-index: 9999;
+}
+
+/* (Opcional) Si usas el div .header-spacer, dale altura del header */
+.header-spacer { height: 70px; }
+
+
+
+
+
+
+
+
+
+
+
+/* ==== REVEAL ON SCROLL (base) ==== */
+.reveal {
+  opacity: 0;
+  transform: translateX(0);
+  transition: opacity 700ms ease, transform 700ms ease;
+  will-change: opacity, transform;
+}
+
+/* Mobile: dirección por data-direction */
+.reveal[data-direction="left"]  { transform: translateX(-40px); }
+.reveal[data-direction="right"] { transform: translateX(40px); }
+
+/* Al entrar al viewport */
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Tablet/Desktop: imponer estado inicial por rol */
+@media (min-width: 768px) {
+  /* IMPORTANTE: usar :not(.is-visible) para que arranquen desplazadas */
+  .reveal[data-role="big"]:not(.is-visible) {
+    opacity: 0;
+    transform: translateX(-40px); /* grande desde izquierda */
+  }
+  .reveal[data-role="small"]:not(.is-visible) {
+    opacity: 0;
+    transform: translateX(40px);  /* chicas desde derecha */
+  }
+}
+
+/* (Opcional) pequeños delays para escalonar */
+.reveal.delay-1 { transition-delay: 120ms; }
+.reveal.delay-2 { transition-delay: 240ms; }

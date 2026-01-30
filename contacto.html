@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Formulario de contacto profesional de Viviana Isabel, arquitecta. Escríbeme o llámame directamente." />
+  <title>Contacto - Viviana Isabel</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="estilos4.css" />
+  <link rel="stylesheet" href="menu.css" />
+</head>
+<body class="bg-white text-black font-[Fira_Code]">
+  <div class="header-hover-zone"></div>
+  <header class="site-header flex justify-between items-center shadow-md bg-white text-black fixed w-full z-50 px-4 h-[70px]">
+    <div class="site-header__title">
+      <h1 class="font-bold text-black viviana-letra-parrafo">VIVIANA ISABEL</h1>
+      <h2 class="text-gray-600 tracking-wide viviana-letra-parrafo">
+        <span aria-hidden="true">ARQUITECTO</span>
+      </h2>
+    </div>
+    <button id="menuToggleOpen" class="menu-toggle text-2xl cursor-pointer" aria-label="Abrir menú">☰</button>
+  </header>
+
+  <nav id="fullscreenMenu" class="fullscreen-menu text-white text-center px-4">
+    <button id="menuToggleClose" type="button" class="absolute top-4 right-4 text-1xl cursor-pointer text-white hover:text-gray-300" aria-label="Cerrar menú">✖</button>
+    <div class="flex flex-col items-center space-y-5 max-w-xs w-full">
+      <h2 class="titulo-july text-5xl mb-4">Vi Isabel</h2>
+      <ul class="flex flex-col items-center space-y-4 text-lg">
+        <li><a href="index4.html" class="hover:underline">Inicio</a></li>
+        <li><a href="sobre_mi_modificado.html" class="hover:underline">Sobre Mí</a></li>
+        <li><a href="proyectos.html" class="hover:underline">Proyectos</a></li>
+        <li><a href="contacto.html" class="hover:underline">Contacto</a></li>
+      </ul>
+      <div class="flex space-x-6 mt-5">
+        <a href="https://instagram.com" class="text-xl"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/in/viviana-isabel/" class="text-xl"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <img src="images/logo3.png" alt="Logo Viviana Isabel" class="w-24 h-auto mt-6" loading="lazy" />
+    </div>
+  </nav>
+
+  <div class="header-spacer"></div>
+
+  <div class="min-h-screen bg-black bg-opacity-60 bg-blend-multiply relative flex items-center justify-center pt-[70px] contacto-fondo">
+    <div class="bg-white bg-opacity-20 backdrop-blur-lg p-6 rounded-lg shadow-lg w-full mx-auto max-w-md md:max-w-2xl lg:max-w-3xl flex flex-col md:flex-row gap-12 text-white">
+
+      <div class="flex-1 space-y-6">
+        <h1 class="text-2xl font-bold leading-tight viviana-letra-parrafo text-justify mt-4">Contáctame</h1>
+        <p class="text-sm leading-relaxed viviana-letra-parrafo text-justify mt-4">Puedes escribirme por correo o redes sociales. También puedes enviarme un mensaje directo usando el formulario.</p>
+        <ul class="space-y-3 text-sm">
+          <li class="flex items-center gap-2">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:contacto@shodwe.cl" class="underline hover:text-gray-300 transition">contacto@shodwe.cl</a>
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fas fa-phone-alt"></i>
+            <a href="tel:+56912345678" class="underline hover:text-gray-300 transition">+56 9 1234 5678</a>
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fab fa-instagram"></i>
+            <a href="https://instagram.com/vi._isabel" target="_blank" rel="noopener noreferrer" class="underline hover:text-gray-300 transition">@vi._isabel</a>
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fas fa-map-marker-alt"></i>
+            <a href="https://www.google.com/maps/place/Pinto,+Regi%C3%B3n+de+%C3%91uble" target="_blank" rel="noopener noreferrer" class="underline hover:text-gray-300 transition">Pinto, Región de Ñuble</a>
+          </li>
+        </ul>
+      </div>
+
+      <form action="https://formspree.io/f/myzenykj" method="POST" class="flex-1 space-y-4">
+          <input type="text" name="_gotcha" style="display:none" />
+
+          <div>
+              <label for="nombre" class="block text-sm mb-1 viviana-letra-parrafo text-justify mt-2">Nombre</label>
+              <input type="text" id="nombre" name="nombre" required class="w-full px-4 py-2 rounded bg-white bg-opacity-30 text-black placeholder-black focus:outline-none" placeholder="Tu nombre" />
+          </div>
+
+          <div>
+              <label for="email" class="block text-sm mb-1">Correo electrónico</label>
+              <input type="email" id="email" name="email" required class="w-full px-4 py-2 rounded bg-white bg-opacity-30 text-black placeholder-black focus:outline-none" placeholder="tucorreo@email.com" />
+          </div>
+
+          <div>
+              <label for="mensaje" class="block text-sm mb-1">Mensaje</label>
+              <textarea id="mensaje" name="message" rows="2" required class="w-full px-4 py-1 rounded bg-white bg-opacity-30 text-black placeholder-black focus:outline-none resize-none" placeholder="Escribe tu mensaje..."></textarea>
+          </div>
+
+          <div class="mt-3 flex items-center justify-between gap-3 border border-gray-700 rounded p-3 bg-black/40">
+              <p class="viviana-letra-parrafo text-sm text-gray-200">¿Prefieres hablar directamente?</p>
+              <a href="https://wa.me/56989947380?text=Hola%20Vivi%2C%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20proyecto."
+                  target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 rounded px-3 py-2 bg-[#25D366] text-white font-semibold hover:opacity-90 transition">
+                  WhatsApp
+              </a>
+          </div>
+
+          <div class="text-right">
+              <button type="submit" class="bg-white text-black font-semibold px-2 py-1 rounded hover:bg-gray-200 transition">Enviar</button>
+          </div>
+      </form>
+    </div>
+  </div>
+
+
+
+
+  <footer class="bg-gray-900 text-gray-400 py-6 viviana-letra-parrafo">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col items-center justify-center space-y-4">
+        <div class="footer-links text-sm flex flex-wrap justify-center gap-x-4 gap-y-1">
+          <a href="index4.html" class="hover:text-white hover:underline viviana-letra-parrafo">Inicio</a>
+          <a href="sobre_mi_modificado.html" class="hover:text-white hover:underline viviana-letra-parrafo">Sobre mí</a>
+          <a href="proyectos.html" class="hover:text-white hover:underline viviana-letra-parrafo">Proyectos</a>
+          <a href="contacto.html" class="hover:text-white hover:underline viviana-letra-parrafo">Contacto</a>
+        </div>
+
+        <div class="flex items-center justify-center gap-4 text-xs text-gray-300">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="hover:text-pink-500" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <p>© <span id="anioActual"></span> Viviana Isabel.</p>
+          <a href="https://www.linkedin.com/in/viviana-isabel/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script src="script_index4.js" defer></script>
+</body>
+</html>

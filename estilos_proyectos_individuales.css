@@ -1,0 +1,208 @@
+/* ========================= */
+/* Estilos para páginas de proyectos individuales */
+/* ========================= */
+
+/* ============================
+   BASE / RESET SUAVE
+============================ */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  line-height: 1.6;
+  background: #ffffff;
+  color: #000;
+}
+
+/* Tipografía de párrafo: Karla (si tienes los archivos locales, deja estos @font-face; si no, se usan Google Fonts) */
+@font-face {
+  font-family: 'Karla';
+  src: url('fonts/Karla/Karla-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Karla';
+  src: url('fonts/Karla/Karla-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 700;
+  font-style: italic;
+  font-display: swap;
+}
+.viviana-letra-parrafo {
+  font-family: 'Karla', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  color: #333;
+}
+
+/* Para el hero (si usas Playfair/Quicksand por Google, lo definiste en <head>) */
+.hero-text h1 { font-family: 'Playfair Display', serif; }
+body { font-family: 'Quicksand', sans-serif; }
+
+/* ============================
+   HEADER FIJO + HOVER ZONE
+============================ */
+.site-header {
+  transition: transform .4s ease, opacity .4s ease;
+  will-change: transform, opacity;
+}
+.header-hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+.header-hover-zone {
+  position: fixed;
+  top: 0; left: 0;
+  height: 5px; width: 100%;
+  z-index: 9999;
+}
+
+/* ============================
+   MENÚ FULLSCREEN
+   (tu JS agrega/remueve .show y body.no-scroll)
+============================ */
+.fullscreen-menu {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.96);
+  display: none; /* oculto por defecto */
+  align-items: center; justify-content: center;
+  z-index: 10000;
+}
+.fullscreen-menu.show { display: flex; }
+body.no-scroll { overflow: hidden; }
+
+/* Título del menú (si usas la fuente personalizada “July it”) */
+@font-face {
+  font-family: 'july_it';
+  src: url('fonts/july_it/July it.otf') format('opentype');
+  font-display: swap;
+}
+.titulo-july { font-family: 'july_it', serif; }
+
+/* ============================
+   REVEAL ON SCROLL (opcional)
+============================ */
+.reveal {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.visible {
+  opacity: 1; transform: translateY(0);
+}
+
+/* ============================
+   CARRUSEL 3D (tomado de tu estilos4.css y unificado)
+============================ */
+.carousel-3d-container {
+  perspective: 3000px;
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  overflow: visible;
+  margin: 2rem 0;
+}
+.carousel-3d-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+.carousel-3d-item {
+  position: absolute;
+  width: 40%;
+  left: 30%;
+  top: 50%;
+  transform-origin: center center;
+  transform-style: preserve-3d;
+  transition: all 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+  z-index: 1;
+  transform: translateY(-50%) scale(0.6);
+  display: block;
+  text-decoration: none;
+  max-height: 90%;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: pointer;
+  filter: brightness(0.5) drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+}
+.carousel-3d-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: all .5s ease;
+  filter: brightness(0.9);
+}
+.carousel-3d-item:hover img { filter: brightness(1.05); }
+
+.carousel-3d-item.front {
+  transform: translateY(-50%) translateZ(800px) scale(1.1);
+  z-index: 10;
+  filter: brightness(1) drop-shadow(0 20px 25px rgba(0, 0, 0, 0.5));
+}
+.carousel-3d-item.left {
+  transform: translateY(-50%) rotateY(60deg) translateZ(600px) scale(0.7);
+  z-index: 9;
+  filter: brightness(0.7) drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
+}
+.carousel-3d-item.right {
+  transform: translateY(-50%) rotateY(-60deg) translateZ(600px) scale(0.7);
+  z-index: 9;
+  filter: brightness(0.7) drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
+}
+.carousel-3d-item.back {
+  transform: translateY(-50%) rotateY(180deg) translateZ(500px) scale(0.5);
+  z-index: 7;
+  filter: brightness(0.5) drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+}
+
+/* Botones del carrusel 3D (estilos básicos; posiciones en Tailwind en el HTML) */
+#carousel3DPrevBtn,
+#carousel3DNextBtn {
+  z-index: 20;
+  font-size: 2.5rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  border: none; border-radius: 50%;
+  width: 60px; height: 60px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all .3s;
+}
+#carousel3DPrevBtn:hover,
+#carousel3DNextBtn:hover {
+  background: rgba(0,0,0,.8);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Responsivo: móviles/tablets ajustan tamaño */
+@media (max-width: 767px) {
+  .carousel-3d-container { height: 95vh; }
+  .carousel-3d-item { width: 80%; left: 10%; height: 90%; }
+  #carousel3DPrevBtn, #carousel3DNextBtn {
+    width: 40px; height: 40px; font-size: 1.5rem;
+  }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .carousel-3d-item { width: 60%; left: 20%; }
+  #carousel3DPrevBtn, #carousel3DNextBtn {
+    width: 50px; height: 50px;
+  }
+}
+
+/* ============================
+   FOOTER
+============================ */
+footer a { transition: color .2s ease; }
+
+/* ============================
+   UTILIDADES MENORES
+============================ */
+img { max-width: 100%; height: auto; }

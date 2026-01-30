@@ -1,0 +1,334 @@
+/* =========================================== */
+/* Hoja de Estilos: estilos_contacto.css       */
+/* Descripción: Estilos personalizados para    */
+/* página de contacto y          */
+/* componentes reutilizables.    */
+/* =========================================== */
+
+/* =========================================== */
+/* Fuentes Personalizadas (@font-face)         */
+/* =========================================== */
+
+/* Fuente July It */
+@font-face {
+    font-family: 'july_it';
+    src: url('fonts/july_it/July it.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Fuente Aileron - Regular */
+@font-face {
+    font-family: 'Aileron';
+    src: url('../fonts/Aileron-Regular.ttf') format('truetype');
+    font-weight: normal; /* 400 */
+    font-style: normal;
+}
+
+/* Fuente Aileron - Bold */
+@font-face {
+    font-family: 'Aileron';
+    src: url('../fonts/Aileron-Bold.ttf') format('truetype');
+    font-weight: bold; /* 700 */
+    font-style: normal;
+}
+
+/* Fuente Karla - Normal (Variable) */
+@font-face {
+    font-family: 'Karla';
+    src: url('../fonts/Karla/Karla-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 700; /* Rango de grosor disponible */
+    font-style: normal;
+}
+  
+/* Fuente Karla - Italic (Variable) */
+@font-face {
+    font-family: 'Karla';
+    src: url('../fonts/Karla/Karla-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 700; /* Rango de grosor */
+    font-style: italic;
+}
+
+
+/* =========================================== */
+/* Estilos Globales / Base                     */
+/* =========================================== */
+
+body {
+    /* Imagen de fondo - Asegúrate que la ruta 'images/solid.png' es correcta */
+    background-image: url('images/solid.png');
+    margin: 0;
+    padding: 0;
+    /* Espacio superior para compensar el header fijo de 70px */
+    padding-top: 70px;
+    /* Configuración Flexbox para footer pegajoso */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* La fuente base se define con Tailwind en el HTML (font-[Fira_Code]) */
+}
+
+
+/* =========================================== */
+/* Clases de Utilidad / Fuentes Aplicadas      */
+/* =========================================== */
+
+/* Aplica la fuente personalizada July It */
+.titulo-july {
+    font-family: 'july_it', sans-serif; /* Añade un fallback por si falla la carga */
+    font-size: 5rem; /* Considera usar clases de Tailwind si es posible */
+}
+
+/* Aplica la fuente Fira Code (usada en header, labels, footer) */
+.viviana-letra {
+    font-family: 'Fira Code', monospace;
+}
+
+/* Aplica la fuente Karla (usada en párrafos, menú, etc.) */
+.viviana-letra-parrafo {
+    font-family: 'Karla', sans-serif; /* Añade un fallback */
+}
+
+
+/* =========================================== */
+/* Encabezado (Header)                         */
+/* =========================================== */
+
+header {
+    position: fixed;   /* Fija el header al tope */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;      /* Altura fija del header */
+    background-color: rgb(0, 0, 0); /* Fondo negro */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    display: flex;     /* Usado en HTML con Tailwind */
+    justify-content: space-between; /* Usado en HTML con Tailwind */
+    align-items: center; /* Usado en HTML con Tailwind */
+    padding: 1rem;     /* Espaciado interno */
+    z-index: 1000;     /* Asegura que esté sobre otros elementos */
+    flex-shrink: 0;    /* Evita que se encoja si el body es flex */
+    /* Clases como text-black, bg-white son aplicadas con Tailwind en el HTML */
+}
+
+
+/* Header con transición suave */
+header {
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    will-change: transform, opacity;
+  }
+  
+  /* Estado oculto */
+  .header-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  /* Zona superior invisible para mostrar el header */
+  .header-hover-zone {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    z-index: 9999;
+  }
+  
+
+/* =========================================== */
+/* Componente: Carrusel de Proyectos           */
+/* (Aplicable si usas este componente)       */
+/* =========================================== */
+
+.carousel {
+    width: 100%;
+    height: 70vh; /* 70% de la altura del viewport */
+    position: relative;
+    overflow: hidden;
+    background-color: #000; /* Fondo mientras cargan imágenes */
+}
+
+.carousel-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* La transición de transformación puede no ser necesaria si usas opacidad */
+    /* transition: transform 0.5s ease-in-out; */
+}
+
+.carousel-slide { /* Estilo base para cada slide */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cubre el área sin distorsionar */
+    position: absolute; /* Permite superponerlas */
+    top: 0;
+    left: 0;
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 1s ease-in-out; /* Transición de fundido */
+    z-index: 0; /* Nivel base */
+}
+
+.carousel-slide.active { /* Estilo para el slide activo */
+    opacity: 1;
+    z-index: 1; /* Se muestra sobre los demás */
+}
+
+/* Botones de navegación del carrusel */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2); /* Fondo semitransparente */
+    color: white; /* Color del icono/texto del botón */
+    border: none;
+    cursor: pointer;
+    z-index: 10; /* Sobre las imágenes */
+    font-size: 1.5rem;
+    padding: 10px;
+    transition: background 0.3s ease-in-out;
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.6); /* Más opaco al pasar el mouse */
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+/* Overlay (Texto sobre las imágenes del carrusel) */
+.proyecto-link { /* Contenedor del enlace que cubre el slide */
+    position: absolute;
+    inset: 0; /* Cubre todo el slide */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.overlay { /* Texto que aparece sobre el slide */
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+    color: white;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    border-radius: 5px;
+    max-width: 80%;
+    text-align: center;
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 0.5s ease-in-out;
+    z-index: 5; /* Sobre la imagen activa pero debajo de los botones */
+}
+
+.proyecto-link:hover .overlay,
+.proyecto-link:focus .overlay { /* Muestra el overlay al pasar el mouse o enfocar */
+    opacity: 1;
+}
+
+
+/* ===========================================
+   MENÚ A PANTALLA COMPLETA
+=========================================== */
+
+.fullscreen-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/maderanegra.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 1100; /* Cambiar de 100 a 1100 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    /* 👇 Efecto de transición */
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+
+.fullscreen-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* ===========================================
+   ENLACES Y ICONOS DENTRO DEL MENÚ
+=========================================== */
+.fullscreen-menu a {
+    margin: 5px 0; /* Espaciado entre enlaces */
+    text-decoration: none; /* Elimina el subrayado */
+    transition: color 0.3s; /* Suaviza el cambio de color */
+    font-family: 'Aileron', sans-serif; /* Usar la misma fuente */
+    font-size: 0.9rem; /* Tamaño de "ARQUITECTA" */
+    color: #dcdada; /* Gris medio */
+    letter-spacing: 0.05em; /* Espaciado similar */
+    font-weight: normal; /* Fuente delgada */
+}
+
+.fullscreen-menu a:hover {
+    color: #0078D7; /* Cambia el color al pasar el mouse */
+}
+
+/* ====== Iconos de redes sociales en el menú ====== */
+.fullscreen-menu i {
+    font-size: 1.5rem; /* Tamaño de los íconos */
+    color: #dcdada; /* Gris medio */
+    margin: 0 10px; /* Espaciado entre íconos */
+}
+
+/* Iconos sociales */
+.fullscreen-menu i {
+    font-size: 1.5rem;
+    color: #b5b3b3; /* Gris medio */
+    transition: color 0.3s;
+    margin: 5px;
+}
+
+
+/* =========================================== */
+/* Pie de Página (Footer)                      */
+/* =========================================== */
+
+footer {
+    /* background-color: #f1f1f1; */ /* Controlado por Tailwind (bg-gray-900) */
+    padding: 20px 0; /* Espaciado vertical - Podría ser py-* en Tailwind */
+    text-align: center;
+    /* font-size: 14px; */ /* Controlado por Tailwind (text-sm, text-xs) */
+    /* color: #555; */ /* Controlado por Tailwind (text-gray-400) */
+    margin-top: auto; /* Empuja el footer hacia abajo en layouts flex */
+}
+
+
+/* Estilos de enlaces en el Footer */
+footer a {
+    /* color: #555; */ /* Definido en Tailwind (text-gray-400) */
+    transition: color 0.3s;
+}
+
+
+
+
+.contacto-fondo {
+  background-image: url('images/viviana\ IA\ 4.png');
+  background-size: cover;
+  background-position: center 30%; /* Aquí está el ajuste clave */
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Casas Mirador Punta Pite</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
+
+  <!-- Iconos -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+
+  <!-- Estilos globales -->
+  <link rel="stylesheet" href="../estilos_proyectos_individuales.css" />
+  <link rel="stylesheet" href="../menu.css" />
+  <!-- Carrusel 3D -->
+  <link rel="stylesheet" href="../estilos4.css" />
+
+  <!-- Tipografías particulares -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Quicksand&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Quicksand', sans-serif; }
+    h1 { font-family: 'Playfair Display', serif; }
+  </style>
+</head>
+<body class="bg-white text-black">
+  <!-- Franja hover para recuperar header -->
+  <div class="header-hover-zone"></div>
+
+  <!-- Header unificado -->
+  <header class="site-header flex justify-between items-center shadow-md bg-white text-black fixed w-full z-50 px-4 h-[70px]">
+    <div class="site-header__title">
+      <h1 class="font-bold text-black viviana-letra-parrafo">VIVIANA ISABEL</h1>
+      <h2 class="text-gray-600 tracking-wide viviana-letra-parrafo">
+        <span aria-hidden="true">ARQUITECTO</span>
+      </h2>
+    </div>
+    <button id="menuToggleOpen" class="menu-toggle text-2xl cursor-pointer" aria-label="Abrir menú">☰</button>
+  </header>
+
+  <!-- Menú fullscreen -->
+  <nav id="fullscreenMenu" class="fullscreen-menu text-white text-center px-4" role="navigation" aria-label="Menú principal">
+    <button id="menuToggleClose" type="button" class="absolute top-4 right-4 text-1xl cursor-pointer text-white hover:text-gray-300" aria-label="Cerrar menú">✖</button>
+
+    <div class="flex flex-col items-center space-y-5 max-w-xs w-full">
+      <h2 class="titulo-july text-5xl mb-4">Vi Isabel</h2>
+      <ul class="flex flex-col items-center space-y-4 text-lg">
+        <li><a href="../index4.html" class="hover:underline">Inicio</a></li>
+        <li><a href="../sobre_mi_modificado.html" class="hover:underline">Sobre Mí</a></li>
+        <li><a href="../proyectos.html" class="hover:underline">Proyectos</a></li>
+        <li><a href="../contacto.html" class="hover:underline">Contacto</a></li>
+      </ul>
+      <div class="flex space-x-6 mt-5">
+        <a href="https://instagram.com" class="text-xl" aria-label="Instagram de Viviana Isabel"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/in/viviana-isabel/" class="text-xl" aria-label="LinkedIn de Viviana Isabel"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <img src="../images/logo3.png" alt="Logo Viviana Isabel" class="w-24 h-auto mt-6" loading="lazy">
+    </div>
+  </nav>
+
+  <main id="mainContent">
+    <section class="relative w-full h-[100vh] overflow-hidden">
+      <img
+        src="../images/cabañamadera1.jpg"
+        alt="Vista general del proyecto"
+        class="w-full h-full object-cover"
+        width="1920" height="1080"
+      />
+
+      <!-- Gradiente debajo del texto (z-0) -->
+      <div class="absolute inset-0 z-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent pointer-events-none"></div>
+
+      <!-- Texto por encima (z-10) y más legible -->
+      <div class="absolute left-6 md:left-10 top-[72%] md:top-[75%] -translate-y-1/2
+                  text-white max-w-xl z-10">
+        <!-- Cinta oscura solo detrás del texto -->
+        <div class="inline-block rounded px-4 md:px-6 py-3 md:py-4
+                    bg-gradient-to-r from-black/70 via-black/50 to-transparent
+                    drop-shadow-[0_6px_16px_rgba(0,0,0,0.7)]">
+          <h1 class="text-[9vw] md:text-[4.5vw] leading-[1.1] font-semibold">
+            Casa de madera – Proyecto 3
+          </h1>
+          <p class="mt-2 text-[4vw] md:text-[1.3vw] leading-tight text-white/95 viviana-letra-parrafo">
+            Casa ubicada en el corazón del valle Las Trancas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Galería (Carrusel 3D) -->
+    <section class="w-full px-0 md:px-6 py-12">
+      <div class="max-w-[1200px] mx-auto px-4 md:px-6 mb-8 text-center">
+        <h2 class="text-[24px] md:text-[30px] font-light tracking-tight viviana-letra-parrafo text-[#7a9ac1]">
+          Galería del proyecto
+        </h2>
+        <span class="block w-[120px] border-t border-black mx-auto mt-3"></span>
+      </div>
+
+      <!-- Carrusel 3D -->
+      <div class="carousel-3d-container relative w-full h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden">
+        <div id="carousel3D" class="carousel-3d-inner relative w-full h-full">
+          <!-- Usa aquí tus fotos reales del proyecto -->
+          <div class="carousel-3d-item"><img src="../images/imagen31.webp" alt="Foto 1 - exterior" loading="lazy"></div>
+          <div class="carousel-3d-item"><img src="../images/casaIA.png"      alt="Foto 2 - interior" loading="lazy"></div>
+          <div class="carousel-3d-item"><img src="../images/negro3.jpg"     alt="Foto 3 - detalle"  loading="lazy"></div>
+          <div class="carousel-3d-item"><img src="../images/cabañamadera2.jpg" alt="Foto 4 - noche" loading="lazy"></div>
+          <div class="carousel-3d-item"><img src="../images/cabañamadera3.jpg" alt="Foto 5 - entorno" loading="lazy"></div>
+        </div>
+
+        <!-- Botones navegación -->
+        <button id="carousel3DPrevBtn" class="absolute top-1/2 left-4 -translate-y-1/2 text-white text-3xl z-10" aria-label="Anterior">❮</button>
+        <button id="carousel3DNextBtn" class="absolute top-1/2 right-4 -translate-y-1/2 text-white text-3xl z-10" aria-label="Siguiente">❯</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-6 viviana-letra-parrafo">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col items-center justify-center space-y-4">
+        <div class="footer-links text-sm flex flex-wrap justify-center gap-x-4 gap-y-1">
+          <a href="../index4.html" class="hover:text-white hover:underline">Inicio</a>
+          <a href="../sobre_mi_modificado.html" class="hover:text-white hover:underline">Sobre mí</a>
+          <a href="../proyectos.html" class="hover:text-white hover:underline">Proyectos</a>
+          <a href="../contacto.html" class="hover:text-white hover:underline">Contacto</a>
+        </div>
+        <div class="flex items-center justify-center gap-4 text-xs text-gray-300">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="hover:text-pink-500" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <p>&copy; <span id="anioActual"></span> Viviana Isabel.</p>
+          <a href="https://www.linkedin.com/in/viviana-isabel/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS del carrusel 3D (ligero y autónomo) -->
+  <script>
+    (function(){
+      const container = document.getElementById('carousel3D');
+      const items = Array.from(container.querySelectorAll('.carousel-3d-item'));
+      const prevBtn = document.getElementById('carousel3DPrevBtn');
+      const nextBtn = document.getElementById('carousel3DNextBtn');
+
+      let center = 0; // índice del elemento al frente
+
+      function setPositions() {
+        // limpiamos clases dinámicas
+        items.forEach(it => it.classList.remove('front','left','right','back'));
+        const n = items.length;
+        // posiciones relativas (puedes ajustar si hay más/menos fotos)
+        const left  = (center - 1 + n) % n;
+        const right = (center + 1) % n;
+        const back  = (center + Math.floor(n/2)) % n; // opuesto
+
+        items[center].classList.add('front');
+        items[left].classList.add('left');
+        items[right].classList.add('right');
+        // el resto en "back"
+        items.forEach((it, i) => {
+          if (i !== center && i !== left && i !== right) it.classList.add('back');
+        });
+      }
+
+      function next(){ center = (center + 1) % items.length; setPositions(); }
+      function prev(){ center = (center - 1 + items.length) % items.length; setPositions(); }
+
+      nextBtn.addEventListener('click', next);
+      prevBtn.addEventListener('click', prev);
+      // teclado
+      window.addEventListener('keydown', (e)=>{ if(e.key==='ArrowRight') next(); if(e.key==='ArrowLeft') prev(); });
+
+      // init
+      setPositions();
+    })();
+  </script>
+
+  <!-- Script general del sitio (menú, header, reveal, año) -->
+  <script src="../script_proyectos.js"></script>
+</body>
+</html>

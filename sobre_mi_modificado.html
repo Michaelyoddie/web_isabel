@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- Idioma en español para accesibilidad y SEO -->
+<head>
+    <meta charset="UTF-8" /> <!-- Codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Responsive design -->
+    <meta name="description" content="Conoce más sobre Viviana Isabel, arquitecta enfocada en diseño funcional e innovador.">
+    <title>Sobre Mí - Viviana Isabel</title>
+
+    <!-- Carga de estilos -->
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilos_sobre_mi_modificado.css">
+    <link rel="stylesheet" href="menu.css">
+    
+
+    <!-- Framework CSS: Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-white text-black flex flex-col min-h-screen">
+
+    <div class="header-hover-zone"></div>
+        <header class="site-header flex justify-between items-center shadow-md bg-white text-black fixed w-full z-50 px-4 h-[70px]">
+        <div class="site-header__title">
+            <h1 class="font-bold text-black viviana-letra-parrafo">VIVIANA ISABEL</h1>
+            <h2 class="text-gray-600 tracking-wide viviana-letra-parrafo">
+            <span aria-hidden="true">ARQUITECTO</span>
+            </h2>
+        </div>
+        <button id="menuToggleOpen" class="menu-toggle text-2xl cursor-pointer" aria-label="Abrir menú">☰</button>
+        </header>
+
+        <!-- MENÚ UNIFICADO - Usar esta estructura en ambas páginas -->
+    <nav id="fullscreenMenu" class="fullscreen-menu text-white text-center px-4" role="navigation" aria-label="Menú principal">
+        <button id="menuToggleClose" type="button" class="absolute top-4 right-4 text-1xl cursor-pointer text-white hover:text-gray-300" aria-label="Cerrar menú">✖</button>
+
+        <div class="flex flex-col items-center space-y-5 max-w-xs w-full">
+            <!-- TÍTULO DEL MENÚ - Esta es la clase crítica que debe funcionar igual -->
+            <h2 class="titulo-july text-5xl mb-4">Vi Isabel</h2>
+            
+            <!-- Navegación principal -->
+            <ul class="flex flex-col items-center space-y-4 text-lg">
+                <li><a href="index4.html" class="hover:underline">Inicio</a></li>
+                <li><a href="sobre_mi_modificado.html" class="hover:underline">Sobre Mí</a></li>
+                <li><a href="proyectos.html" class="hover:underline">Proyectos</a></li>
+                <li><a href="index4.html#contacto" class="hover:underline">Contacto</a></li>
+            </ul>
+
+            <!-- Iconos de redes sociales -->
+            <div class="flex space-x-6 mt-5">
+                <a href="https://instagram.com" class="text-xl" aria-label="Instagram de Viviana Isabel">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://linkedin.com/in/viviana-isabel/" class="text-xl" aria-label="LinkedIn de Viviana Isabel">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+
+            <!-- Logo institucional -->
+            <img src="images/logo3.png" alt="Logo Viviana Isabel" class="w-24 h-auto mt-6" loading="lazy">
+        </div>
+    </nav>
+
+
+    <!-- Espaciador para que el header fijo no tape contenido -->
+    <div class="header-spacer pt-28"></div>
+
+    <!-- Imagen principal del sitio -->
+    <div class="hero-image w-full max-w-5xl mx-auto px-4 -mt-20">
+        <img
+            src="images/viviana IA 2.png"
+            alt="Plano arquitectónico"
+            class="w-full max-h-[400px] object-contain rounded shadow"
+        />
+    </div>
+
+    <!-- Sección de presentación -->
+    <section class="presentation-section w-full px-5 py-10 max-w-5xl mx-auto px-6">
+        <div class="presentation-container w-full text-left">
+        <h2 class="text-black text-xl mb-4 md:text-left viviana-letra-parrafo">Sobre mí</h2>
+            <p class="viviana-letra-parrafo text-[14px] md:text-[16px] font-light leading-[1.7] text-[#525252] tracking-[0.01em] text-justify">
+                Soy Isabel, arquitecta con más de cuatro años de experiencia en diseño y gestión de proyectos en los ámbitos residencial, turístico y público. Me especializo en la formulación de proyectos de inversión pública y en el desarrollo de propuestas que se ajustan a las normativas, sin dejar de lado la creatividad y el impacto positivo en el entorno. Mi trabajo se caracteriza por una fuerte orientación a resultados, pensamiento crítico y una alta capacidad de adaptación a contextos diversos.
+            </p>
+        </div>
+    </section>
+
+    <!-- Galería de imágenes -->
+    <div class="gallery-section w-full max-w-5xl mx-auto px-4 pb-10">
+        <div class="image-grid grid grid-cols-3 gap-4 justify-items-center">
+            <div class="gallery-item flex flex-col items-center">
+                <img src="images/viviana IA 1.png" alt="Viviana Isabel 1" class="gallery-image w-[100px] sm:w-[140px] md:w-[200px] h-auto object-cover rounded shadow-md mb-2" loading="lazy" />
+            </div>
+            <div class="gallery-item flex flex-col items-center">
+                <img src="images/viviana IA 4.png" alt="Viviana Isabel 2" class="gallery-image w-[100px] sm:w-[140px] md:w-[200px] h-auto object-cover rounded shadow-md mb-2" loading="lazy" />
+            </div>
+            <div class="gallery-item flex flex-col items-center">
+                <img src="images/viviana IA 5.png" alt="Viviana Isabel 3" class="gallery-image w-[100px] sm:w-[140px] md:w-[200px] h-auto object-cover rounded shadow-md mb-2" loading="lazy" />
+            </div>
+        </div>
+    </div>
+
+        <!-- Nueva sección: Currículum -->
+    <section class="curriculum-section w-full max-w-5xl mx-auto px-6 py-2">
+        <h2 class="text-black text-xl mb-4 md:text-left .viviana-letra-parrafo">Currículum</h2>
+
+        <div class="space-y-6 text-[#525252] text-[14px] md:text-[16px] leading-relaxed viviana-letra-parrafo text-justify">
+
+            <!-- Perfil profesional -->
+            <div>
+                <h3 class="text-lg font-bold text-black mb-2">Perfil Profesional</h3>
+                <p>
+                    Arquitecta orientada a resultados con más de 4 años de experiencia en diseño y gestión de proyectos en sectores residencial, turístico y público. Con amplio manejo en formulación de proyectos de inversión pública. Reconocida por mi pensamiento crítico, adaptabilidad y liderazgo, me destaco por proponer soluciones innovadoras y garantizar el cumplimiento normativo en proyectos complejos.
+                </p>
+            </div>
+
+            <!-- Experiencia -->
+            <div>
+                <h3 class="text-lg font-bold text-black mb-2">Experiencia Destacada</h3>
+                <ul class="list-disc list-inside space-y-2">
+                    <li><strong>SECPLAN - Municipalidad de Pinto (2023 - Actualidad):</strong> Diseño y supervisión de proyectos arquitectónicos residenciales, turísticos y comerciales. Gestión de permisos, regularización y coordinación con entidades gubernamentales.</li>
+                    <li><strong>Arquitectura y Construcción Ltda. | Vivariq (2020 - Actualidad):</strong> Desarrollo de proyectos como Complejo Los Nevados, El Arriero, Complejo La Invernada y Vita Servicios Generales.</li>
+                </ul>
+            </div>
+
+            <!-- Educación -->
+            <div>
+                <h3 class="text-lg font-bold text-black mb-2">Educación</h3>
+                <p>Arquitectura - Universidad de Chile (2014 - 2020)</p>
+            </div>
+
+            <!-- Certificaciones -->
+            <div>
+                <h3 class="text-lg font-bold text-black mb-2">Certificaciones y Cursos</h3>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>Metodología para la Elaboración de Proyectos de Inversión Pública (2024)</li>
+                    <li>Transformación Digital (DX Express) (2023)</li>
+                    <li>Introducción a la Metodología BIM (2021)</li>
+                </ul>
+            </div>
+
+            <!-- Habilidades -->
+            <div>
+                <h3 class="text-lg font-bold text-black mb-2">Habilidades Técnicas</h3>
+                <p>
+                    AutoCAD (avanzado), SketchUp, Rhino, Twinmotion, Illustrator, Photoshop, InDesign.  
+                    Formulación y evaluación de proyectos de inversión pública.
+                </p>
+            </div>
+        </div>
+
+        <!-- Botón para descargar CV -->
+        <div class="mt-8 text-center">
+            <a href="docs/ISABEL_RIQUELME.pdf" download 
+               class="inline-block bg-[#B91C3B] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#8C152D] transition">
+                <i class="fas fa-file-download mr-2"></i> Descargar Currículum
+            </a>
+        </div>
+    </section>
+
+
+    <!-- =========================
+    FOOTER
+    - Links rápidos
+    - Redes sociales + año dinámico (#anioActual)
+  ========================== -->
+  <footer class="bg-black text-white pt-16 pb-8 border-t border-zinc-800">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 mb-12">
+        
+        <div class="flex flex-col items-center md:items-start text-center md:text-left">
+          <h2 class="text-2xl font-bold tracking-wider mb-4 viviana-letra-parrafo">
+            VIVIANA ISABEL
+          </h2>
+          <p class="text-zinc-500 text-sm leading-relaxed max-w-xs viviana-letra-parrafo">
+            Arquitectura que conecta emociones con espacios. 
+            Diseño residencial, turístico y paisajismo consciente.
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center md:items-start text-center md:text-left">
+          <h3 class="text-xs font-bold text-zinc-500 uppercase tracking-[0.2em] mb-6 viviana-letra-parrafo">
+            Explorar
+          </h3>
+          <ul class="space-y-3 viviana-letra-parrafo text-sm text-zinc-300">
+            <li><a href="index4.html" class="hover:text-white hover:translate-x-1 transition-transform inline-block">Inicio</a></li>
+            <li><a href="proyectos.html" class="hover:text-white hover:translate-x-1 transition-transform inline-block">Portafolio</a></li>
+            <li><a href="sobre_mi_modificado.html" class="hover:text-white hover:translate-x-1 transition-transform inline-block">Sobre mí</a></li>
+            <li><a href="index4.html#contacto" class="hover:text-white hover:translate-x-1 transition-transform inline-block">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="flex flex-col items-center md:items-start text-center md:text-left">
+          <h3 class="text-xs font-bold text-zinc-500 uppercase tracking-[0.2em] mb-6 viviana-letra-parrafo">
+            Hablemos
+          </h3>
+          <ul class="space-y-3 viviana-letra-parrafo text-sm text-zinc-300">
+            <li>
+              <a href="mailto:contacto@vivianaisabel.cl" class="hover:text-white transition-colors">
+                contacto@vivianaisabel.cl
+              </a>
+            </li>
+            <li>
+              <span class="block text-zinc-500 text-xs mt-1">Santiago, Chile</span>
+            </li>
+            <li class="pt-4 flex gap-4 justify-center md:justify-start">
+              <a href="https://instagram.com" target="_blank" class="w-8 h-8 rounded-full bg-zinc-900 flex items-center justify-center hover:bg-white hover:text-black transition-all">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://linkedin.com" target="_blank" class="w-8 h-8 rounded-full bg-zinc-900 flex items-center justify-center hover:bg-white hover:text-black transition-all">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://wa.me/569..." target="_blank" class="w-8 h-8 rounded-full bg-zinc-900 flex items-center justify-center hover:bg-[#25D366] hover:text-white transition-all">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-zinc-900 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-zinc-600 viviana-letra-parrafo">
+        <p>&copy; <span id="anioActual">2026</span> Viviana Isabel Arquitectura. Todos los derechos reservados.</p>
+        
+        <div class="mt-4 md:mt-0 flex gap-6">
+          <a href="#" class="hover:text-zinc-400 transition-colors">Aviso Legal</a>
+          <a href="#" class="hover:text-zinc-400 transition-colors">Privacidad</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+    <!-- Lightbox para ampliar imágenes -->
+    <div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+        <span id="lightbox-close" class="absolute top-5 right-5 text-white text-4xl cursor-pointer z-50">&times;</span>
+        <button id="prev-btn" class="absolute left-4 text-white text-4xl z-50 cursor-pointer">&#10094;</button>
+        <img id="lightbox-img" src="" alt="Imagen ampliada" class="max-w-[90%] max-h-[90%] rounded shadow-lg z-40 transition duration-300 ease-in-out">
+        <button id="next-btn" class="absolute right-4 text-white text-4xl z-50 cursor-pointer">&#10095;</button>
+    </div>
+
+    <!-- JavaScript del sitio -->
+    <script src="script_sobre_mi.js"></script>
+
+</body>
+</html>

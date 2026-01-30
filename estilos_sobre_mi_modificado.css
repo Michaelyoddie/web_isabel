@@ -1,0 +1,337 @@
+/* ===========================================
+    FUENTES PERSONALIZADAS
+=========================================== */
+
+@font-face {
+    font-family: 'july_it';
+    src: url('fonts/july_it/July it.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Fuente Aileron - Regular (igual que Contacto) */
+@font-face {
+  font-family: 'Aileron';
+  src: url('./fonts/Aileron-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Fuente Aileron - Bold (igual que Contacto) */
+@font-face {
+  font-family: 'Aileron';
+  src: url('./fonts/Aileron-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Fira Code';
+    src: url('fonts/FiraCode-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Karla';
+    src: url('fonts/Karla/Karla-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Karla';
+    src: url('fonts/Karla/Karla-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* ===========================================
+    RESETEO Y AJUSTES GENERALES
+=========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 70px;
+    font-family: 'Karla', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* ===========================================
+    FUENTES APLICADAS A CLASES ESPECÍFICAS
+=========================================== */
+
+.titulo-july {
+    font-family: 'july_it';
+    font-size: clamp(3rem, 8vw, 5rem);
+}
+
+.viviana-letra {
+    font-family: 'Fira Code', monospace;
+    font-size: 1rem;
+}
+
+.viviana-letra-parrafo {
+    font-family: 'Karla', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+}
+
+/* ===========================================
+    HEADER FIJO
+=========================================== */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 1000;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    will-change: transform, opacity;
+}
+
+.header-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.header-hover-zone {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    z-index: 9999;
+}
+
+/* ===========================================
+    ESTILOS ESPECÍFICOS PARA LA PÁGINA SOBRE MÍ
+=========================================== */
+
+.hero-image {
+    margin-bottom: 2rem;
+}
+
+.presentation-section {
+    margin-bottom: 2rem;
+}
+
+.gallery-section {
+    margin-bottom: 2rem;
+}
+
+.gallery-item img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.curriculum-section {
+    margin-bottom: 2rem;
+}
+
+.curriculum-section h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.curriculum-section ul {
+    margin-left: 1rem;
+}
+
+.curriculum-section li {
+    margin-bottom: 0.5rem;
+}
+
+/* Botón de descarga */
+.curriculum-section a {
+    display: inline-flex;
+    align-items: center;
+    background-color: #B91C3B;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.curriculum-section a:hover {
+    background-color: #8C152D;
+    transform: translateY(-1px);
+}
+
+.curriculum-section a i {
+    margin-right: 8px;
+}
+
+/* ===========================================
+    LIGHTBOX PARA GALERÍA
+=========================================== */
+
+#lightbox {
+    backdrop-filter: blur(5px);
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+#lightbox-close,
+#prev-btn,
+#next-btn {
+    user-select: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+#lightbox-close:hover,
+#prev-btn:hover,
+#next-btn:hover {
+    opacity: 0.7;
+}
+
+/* ===========================================
+    PIE DE PÁGINA (FOOTER)
+=========================================== */
+
+footer {
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer a {
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #0078D7;
+}
+
+/* ===========================================
+    RESPONSIVE DESIGN
+=========================================== */
+
+@media (max-width: 768px) {
+    .titulo-july {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+    }
+    
+    .hero-image {
+        padding: 0 1rem;
+    }
+    
+    .gallery-item img {
+        width: 80px;
+    }
+    
+    .presentation-section,
+    .curriculum-section {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .presentation-section,
+    .curriculum-section {
+        padding: 0 2rem;
+    }
+    
+    .gallery-item img {
+        width: 140px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .presentation-section,
+    .curriculum-section {
+        padding: 0 3rem;
+    }
+    
+    .gallery-item img {
+        width: 200px;
+    }
+}
+
+/* ===========================================
+    UTILIDADES ADICIONALES
+=========================================== */
+
+.text-justify {
+    text-align: justify;
+}
+
+.rounded {
+    border-radius: 0.375rem;
+}
+
+.shadow {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.shadow-md {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
